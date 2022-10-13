@@ -6,10 +6,26 @@ import Popup from '../Popup/Popup'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 
+/*
+ * SMART Process 
+ * 
+ * S - Specific
+ * M - Measurable
+ * A - Achieveable
+ * R - Relevant
+ * T - Time Specific
+ */
+
 const Goals = () => {
     const [formPopup, setFormPopup] = useState(false)
-    const [selectedDate, setSelectedDate] = useState(null)
-
+    const [selectedDate, setSelectedDate] = useState(new Date())
+    const [sValue, setSValue] = useState('')
+    const [mValue, setMValue] = useState('')
+    const [aValue, setAValue] = useState('')
+    const [rValue, setRValue] = useState('') 
+    const [tValue, setTValue] = useState('')
+    const [reason, setReason] = useState('')
+    
     return (
         <div className="goals">
             <Header title={'Goals'}/>
@@ -32,6 +48,7 @@ const Goals = () => {
 
                                 <label>How difficult is this goal?</label>
                                 <select>
+                                    <option>Select Option</option>
                                     <option>Very Easy</option>
                                     <option>Easy</option>
                                     <option>Moderate</option>
@@ -40,7 +57,15 @@ const Goals = () => {
                                 </select>
                                 
                                 <label>How does this goal align with my life?</label>
-                                <input type='text' />
+                                <select>
+                                    <option>Select Option</option>
+                                    <option>Lifestyle</option>
+                                    <option>Work</option>
+                                    <option>Fitness</option>
+                                    <option>Hobby</option>
+                                    <option>Finances</option>
+                                    <option>Project</option>
+                                </select>
 
                                 <label>When do I plan on achieving this goal?</label>
                                 <DatePicker 

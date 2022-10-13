@@ -26,9 +26,16 @@
     font-size: 1.2rem;
 }
 
-.form-popup input , .form-popup select{
+.form-popup input {
     background-color: rgb(233, 233, 233);
-    height: 4vh;
+    height: 3vh;
+    padding: 1vh;
+}
+
+.form-popup select {
+    background-color: rgb(233, 233, 233);
+    height: 5vh;
+    padding: 1vh;
 }
 
 #form-btn {
