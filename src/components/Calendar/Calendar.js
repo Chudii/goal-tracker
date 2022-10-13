@@ -6,10 +6,6 @@ const Calendar = () => {
     const [day, setDay] = useState('00')
     const [year, setYear] = useState('0000')
 
-    const setDateLabel = () => {
-
-    }
-
     useEffect(() => {
         const today = new Date()
         setMonth(today.getMonth() + 1)

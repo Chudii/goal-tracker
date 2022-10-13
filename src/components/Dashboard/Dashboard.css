@@ -1,0 +1,52 @@
+.main-content {
+    display: flex;
+}
+
+.navigation {
+    width: fit-content;
+    margin: 4vh 2vw;
+    background-color: rgb(121, 161, 133);
+}
+
+nav {
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+    padding: 20vh 3vw 20vh 2vw;
+    row-gap: 3vh;
+    text-align: left;
+}
+
+.navigation a {
+    width: 5vw;
+    display: flex;
+    justify-self: left;
+    color: white;
+    text-decoration: none;
+}
+
+.dash {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    margin: 4vh 2vw 4vh 0;
+}
+
+.time-track, .goal-track, .task-track {
+    display: flex;
+    background-color: rgb(84, 134, 99);
+    width: 31.75%;
+    height: 10vh;
+    justify-content: center;
+}
+
+.track {
+    display: flex;
+    justify-content: space-between;
+}
+
+.track p {
+    align-self: center;
+    color: white;
+}
