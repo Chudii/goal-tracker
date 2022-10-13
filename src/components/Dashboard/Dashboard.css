@@ -1,36 +1,9 @@
-.main-content {
-    display: flex;
-}
-
-.navigation {
-    width: fit-content;
-    margin: 4vh 2vw;
-    background-color: rgb(121, 161, 133);
-}
-
-nav {
-    width: 8vw;
-    display: flex;
-    flex-direction: column;
-    padding: 20vh 3vw 20vh 2vw;
-    row-gap: 3vh;
-    text-align: left;
-}
-
-.navigation a {
-    width: 5vw;
-    display: flex;
-    justify-self: left;
-    color: white;
-    text-decoration: none;
-}
-
 .dash {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-self: center;
-    margin: 4vh 2vw 4vh 0;
+    row-gap: 4vh;
 }
 
 .time-track, .goal-track, .task-track {
@@ -49,4 +22,9 @@ nav {
 .track p {
     align-self: center;
     color: white;
+}
+
+.activity-chart {
+    background-color: rgb(121, 161, 133);
+    height: 50vh;
 }

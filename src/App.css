@@ -6,3 +6,9 @@
     border: 0;
     font-family: 'Sanchez';
 }
+
+.main-content {
+    display: flex;
+    margin: 4vh 2vw;
+    column-gap: 2vw;
+}

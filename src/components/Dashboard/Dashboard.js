@@ -1,5 +1,6 @@
 import './Dashboard.css'
 import Header from '../Header/Header'
+import Navbar from '../Navbar/Navbar'
 
 const Dashboard = () => {
     return (
@@ -7,15 +8,7 @@ const Dashboard = () => {
             <Header title={'Dashboard'}/>
 
             <div className='main-content'>
-                <div className="navigation">
-                    <nav>
-                        <a href='/'>Home</a>
-                        <a>Profile</a>
-                        <a href='/goals'>Goals</a>
-                        <a>Journal</a>
-                        <a>Settings</a>
-                    </nav>
-                </div>
+                <Navbar />
 
                 <div className='dash'>
                     <div className='track'>
@@ -30,6 +23,9 @@ const Dashboard = () => {
                         </div>
                     </div>
                     
+                    <div className='activity-chart'>
+                        <h3>Activity Chart</h3>
+                    </div>
                 </div>
             </div>
             

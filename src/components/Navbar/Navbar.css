@@ -1,0 +1,21 @@
+.navigation {
+    width: fit-content;
+    background-color: rgb(121, 161, 133);
+}
+
+nav {
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+    padding: 20vh 3vw 20vh 2vw;
+    row-gap: 3vh;
+    text-align: left;
+}
+
+.navigation a {
+    width: 5vw;
+    display: flex;
+    justify-self: left;
+    color: white;
+    text-decoration: none;
+}

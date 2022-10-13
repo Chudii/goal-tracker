@@ -1,0 +1,41 @@
+.active-goals {
+    background-color: rgb(121, 161, 133);
+    width: 100%;
+    color: white;
+}
+
+.form-popup {
+    line-height: 2;
+}
+
+.form-popup p {
+    font-size: 1.8rem;
+}
+
+.form-popup form {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    padding: 5vh;
+}
+
+.form-popup label {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+    font-size: 1.2rem;
+}
+
+.form-popup input , .form-popup select{
+    background-color: rgb(233, 233, 233);
+    height: 4vh;
+}
+
+#form-btn {
+    background-color: rgb(84, 134, 99);
+    color: white;
+    align-self: center;
+    margin: 4vh 0 0 0;
+    height: 5vh;
+    width: 8vw;
+}
