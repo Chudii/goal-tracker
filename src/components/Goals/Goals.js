@@ -1,4 +1,5 @@
 import './Goals.css'
+import { createGoal, getGoals, deleteGoal, editGoal } from '../../services/goals-api'
 import { useState, useEffect } from 'react'
 import Header from '../Header/Header'
 import Navbar from '../Navbar/Navbar'
@@ -9,22 +10,71 @@ import 'react-datepicker/dist/react-datepicker.css'
 /*
  * SMART Process 
  * 
- * S - Specific
- * M - Measurable
- * A - Achieveable
- * R - Relevant
- * T - Time Specific
+ * S - Specific --- Goal
+ * M - Measurable --- Measurabiltiy
+ * A - Achieveable --- Difficulty
+ * R - Relevant --- Category
+ * T - Time Specific --- Target Date
  */
 
 const Goals = () => {
+    const [goals, setGoals] = useState([])
     const [formPopup, setFormPopup] = useState(false)
-    const [selectedDate, setSelectedDate] = useState(new Date())
-    const [sValue, setSValue] = useState('')
-    const [mValue, setMValue] = useState('')
-    const [aValue, setAValue] = useState('')
-    const [rValue, setRValue] = useState('') 
-    const [tValue, setTValue] = useState('')
+    const [goal, setGoal] = useState('')
+    const [measurability, setMeasurability] = useState('')
+    const [difficulty, setDifficulty] = useState(0)
+    const [category, setCategory] = useState('') 
+    const [targetDate, setTargetDate] = useState(new Date())
     const [reason, setReason] = useState('')
+
+    const create = async (evt) => {
+        const newGoal = {
+            goal: goal,
+            measurability: measurability,
+            difficulty: difficulty,
+            category: category,
+            targetDate: targetDate,
+            reason: reason
+        }
+
+        try {
+            await createGoal(newGoal)
+            setFormPopup(false)
+        } catch (err) {
+            console.log(err)
+        }
+    } 
+
+    const remove = async (evt, id) => {
+        try {
+            await deleteGoal(id)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    const edit = async (evt, id) => {
+        setFormPopup(true)
+        const updatedGoal = {
+            goal: goal,
+            measurability: measurability,
+            difficulty: difficulty,
+            category: category,
+            targetDate: targetDate,
+            reason: reason
+        }
+
+        try {
+            await editGoal(id, updatedGoal)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    useEffect(() => {
+        getGoals()
+            .then(res => setGoals(res.data))
+    }, [])
     
     return (
         <div className="goals">
@@ -34,43 +84,80 @@ const Goals = () => {
                 <Navbar />
 
                 <div className='active-goals'>
+                    <div>
+                        {
+                            goals && goals.map((g, i) => {
+                                return (
+                                    <div key={i}>
+                                        <p>{g.goal}</p>
+                                        <form onSubmit={(evt) => remove(evt, g._id)}>
+                                            <button type='button' onClick={(evt) => edit(evt, g._id)}>EDIT</button>
+                                            <br></br>
+                                            <button type='submit'>X</button>
+                                        </form> 
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    
+
                     <button onClick={() => setFormPopup(true)}>Create New Goal</button>
                     <Popup trigger={formPopup} setTrigger={setFormPopup}>
                         <div className='form-popup'>
-                            <form>
+                            <form onSubmit={create}>
                                 <p>Add New Goal</p>
 
                                 <label>What goal am I committing to?</label>
-                                <input type='text'/>
+                                <input 
+                                    type='text' 
+                                    name='goal'
+                                    value={goal}
+                                    onChange={evt => setGoal(evt.target.value)}
+                                />
 
                                 <label>How will I know I have accomplished this goal?</label>
-                                <input type='text'/>
+                                <input 
+                                    type='text' 
+                                    name='measurability'
+                                    value={measurability}
+                                    onChange={evt => setMeasurability(evt.target.value)}
+                                />
 
                                 <label>How difficult is this goal?</label>
-                                <select>
-                                    <option>Select Option</option>
-                                    <option>Very Easy</option>
-                                    <option>Easy</option>
-                                    <option>Moderate</option>
-                                    <option>Hard</option>
-                                    <option>Insane</option>
+                                <select 
+                                    name='difficulty'
+                                    value={difficulty}
+                                    onChange={evt => setDifficulty(evt.target.value)}
+                                >
+                                    <option>-- Select Option --</option>
+                                    <option value={1}>Very Easy</option>
+                                    <option value={2}>Easy</option>
+                                    <option value={3}>Moderate</option>
+                                    <option value={4}>Hard</option>
+                                    <option value={5}>Insane</option>
                                 </select>
                                 
                                 <label>How does this goal align with my life?</label>
-                                <select>
-                                    <option>Select Option</option>
-                                    <option>Lifestyle</option>
-                                    <option>Work</option>
-                                    <option>Fitness</option>
-                                    <option>Hobby</option>
-                                    <option>Finances</option>
-                                    <option>Project</option>
+                                <select 
+                                    name='category'
+                                    value={category}
+                                    onChange={evt => setCategory(evt.target.value)}
+                                >
+                                    <option>-- Select Option --</option>
+                                    <option value='lifestyle'>Lifestyle</option>
+                                    <option value='work'>Work</option>
+                                    <option value='fitness'>Fitness</option>
+                                    <option value='hobby'>Hobby</option>
+                                    <option value='finances'>Finances</option>
+                                    <option value='project'>Project</option>
                                 </select>
 
                                 <label>When do I plan on achieving this goal?</label>
                                 <DatePicker 
-                                    selected={selectedDate} 
-                                    onChange={date => setSelectedDate(date)}
+                                    name='targetDate'
+                                    selected={targetDate} 
+                                    onChange={date => setTargetDate(date)}
                                     minDate={new Date()}
                                     isClearable
                                     showYearDropdown
@@ -78,7 +165,12 @@ const Goals = () => {
                                 />
 
                                 <label>Why do I want to achieve this goal?</label>
-                                <input type='text'/>
+                                <input 
+                                    type='text' 
+                                    name='reason'
+                                    value={reason}
+                                    onChange={evt => setReason(evt.target.value)}  
+                                />
 
                                 <button id='form-btn' type='submit'>Add Goal</button>
                             </form>
