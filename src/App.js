@@ -1,7 +1,7 @@
 import './App.css';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
-import Home from './components/Home/Home'
-import Dashboard from './components/Dashboard/Dashboard'
+import Home from './pages/Home/Home'
+import Dashboard from './pages/Dashboard/Dashboard'
 import Goals from './components/Goals/Goals'
 
 const App = () => {

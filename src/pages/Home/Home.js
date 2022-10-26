@@ -1,6 +1,6 @@
 import './Home.css'
-import Calendar from '../Calendar/Calendar'
-import Header from '../Header/Header'
+import Calendar from '../../components/Calendar/Calendar'
+import Header from '../../components/Header/Header'
 
 const Home = () => {
     return (

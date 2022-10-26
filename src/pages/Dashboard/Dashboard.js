@@ -1,6 +1,6 @@
 import './Dashboard.css'
-import Header from '../Header/Header'
-import Navbar from '../Navbar/Navbar'
+import Header from '../../components/Header/Header'
+import Navbar from '../../components/Navbar/Navbar'
 
 const Dashboard = () => {
     return (
