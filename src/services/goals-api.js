@@ -9,6 +9,12 @@ export const getGoals = () => {
     return response
 }
 
+export const getGoal = (id) => {
+    const URL = baseURL + `/${id}`
+    const response = axios.get(URL)
+    return response
+}
+
 export const createGoal = (goal) => {
     const response = axios.post(baseURL, goal)
     return response
