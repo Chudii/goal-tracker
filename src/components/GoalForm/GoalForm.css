@@ -1,4 +1,4 @@
-.popup {
+.goal-form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,7 +10,7 @@
     background-color: rgb(121, 161, 133);
 }
 
-.popup-content {
+.form-content {
     background-color: white;
     color: black;
 }

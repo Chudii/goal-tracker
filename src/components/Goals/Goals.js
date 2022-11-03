@@ -8,7 +8,6 @@ import {
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
-import Popup from "../Popup/Popup";
 import NewGoal from "../NewGoal/NewGoal";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -24,7 +23,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Goals = () => {
   const [goals, setGoals] = useState([]);
-  const [formPopup, setFormPopup] = useState(false);
+  const [formPopup, setFormPopup] = useState(false)
 
   const remove = async (evt, id) => {
     try {
@@ -34,23 +33,23 @@ const Goals = () => {
     }
   };
 
-  const edit = async (evt, id) => {
-    setFormPopup(true);
-    const updatedGoal = {
-      goal: goal,
-      measurability: measurability,
-      difficulty: difficulty,
-      category: category,
-      targetDate: targetDate,
-      reason: reason,
-    };
+  // const edit = async (evt, id) => {
+  //   setFormPopup(true);
+  //   const updatedGoal = {
+  //     goal: goal,
+  //     measurability: measurability,
+  //     difficulty: difficulty,
+  //     category: category,
+  //     targetDate: targetDate,
+  //     reason: reason,
+  //   };
 
-    try {
-      await editGoal(id, updatedGoal);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  //   try {
+  //     await editGoal(id, updatedGoal);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   useEffect(() => {
     getGoals()
@@ -70,11 +69,11 @@ const Goals = () => {
               goals.map((g, i) => {
                 return (
                   <div key={i}>
-                    <a href={`/${g._id}`}><p>{g.goal}</p></a>
+                    <a href={`/goals/${g._id}`}><p>{g.goal}</p></a>
                     <form onSubmit={(evt) => remove(evt, g._id)}>
-                      <button type="button" onClick={(evt) => edit(evt, g._id)}>
+                      {/* <button type="button" onClick={(evt) => edit(evt, g)}>
                         EDIT
-                      </button>
+                      </button> */}
                       <br></br>
                       <button type="submit">X</button>
                     </form>

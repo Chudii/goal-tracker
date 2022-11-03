@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react"
-import { editGoal, getGoal } from "../../services/goals-api"
+import { useState, useEffect } from "react"
+import GoalForm from "../GoalForm/GoalForm"
+import { getGoal } from "../../services/goals-api"
 
-const EditGoal = () => {
-
-    useEffect(() => {
-        
-    })
-
-
-
-    return (
-        <div className="edit-goal">
-
+const EditGoal = ({ data, trigger, setTrigger }) => {
+    
+    return (trigger) ? (
+        <div className="new-goal">
+            <div className="goal-content">
+                <GoalForm data={data} setTrigger={setTrigger}/>
+            </div>
         </div>
-    )
+    ) : ""
 }
+
+export default EditGoal

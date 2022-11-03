@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Goals from './components/Goals/Goals'
-import Goal from './components/Goal'
+import Goal from './components/Goal/Goal'
 
 const App = () => {
   return (
