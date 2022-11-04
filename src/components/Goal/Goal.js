@@ -18,6 +18,7 @@ const Goal = () => {
     const remove = async (evt) => {
         try {
           await deleteGoal(id);
+          nav('/goals')
         } catch (err) {
           console.log(err);
         }

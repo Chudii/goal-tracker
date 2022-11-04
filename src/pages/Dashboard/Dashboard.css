@@ -1,3 +1,11 @@
+body {
+    background-color: #F5EFE6;
+}
+
+.main-content {
+    margin: 1vw;
+}
+
 .dash {
     width: 100%;
     display: flex;

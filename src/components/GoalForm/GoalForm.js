@@ -51,7 +51,7 @@ const GoalForm = ({ setTrigger, data }) => {
         <div className="goal-form">
             <div className="form-content">
                 <div className='form-popup'>
-                    <form onSubmit={data ? create : edit()}>
+                    <form onSubmit={data ? edit(data._id) : create}>
                         <p>Add New Goal</p>
 
                         <label>What goal am I committing to?</label>

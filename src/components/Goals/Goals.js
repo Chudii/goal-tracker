@@ -33,24 +33,6 @@ const Goals = () => {
     }
   };
 
-  // const edit = async (evt, id) => {
-  //   setFormPopup(true);
-  //   const updatedGoal = {
-  //     goal: goal,
-  //     measurability: measurability,
-  //     difficulty: difficulty,
-  //     category: category,
-  //     targetDate: targetDate,
-  //     reason: reason,
-  //   };
-
-  //   try {
-  //     await editGoal(id, updatedGoal);
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   useEffect(() => {
     getGoals()
         .then((res) => setGoals(res.data));
@@ -64,17 +46,15 @@ const Goals = () => {
         <Navbar />
 
         <div className="active-goals">
-          <div>
+          <button id="new-btn" onClick={() => setFormPopup(true)}>Create New Goal</button>
+
+          <div className="goal-list">
             {goals &&
               goals.map((g, i) => {
                 return (
                   <div key={i}>
                     <a href={`/goals/${g._id}`}><p>{g.goal}</p></a>
                     <form onSubmit={(evt) => remove(evt, g._id)}>
-                      {/* <button type="button" onClick={(evt) => edit(evt, g)}>
-                        EDIT
-                      </button> */}
-                      <br></br>
                       <button type="submit">X</button>
                     </form>
                   </div>
@@ -82,7 +62,7 @@ const Goals = () => {
               })}
           </div>
 
-          <button onClick={() => setFormPopup(true)}>Create New Goal</button>
+          
           <NewGoal trigger={formPopup} setTrigger={setFormPopup} />
         </div>
       </div>
