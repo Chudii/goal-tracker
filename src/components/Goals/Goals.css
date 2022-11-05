@@ -1,5 +1,4 @@
 .active-goals {
-    position: relative;
     background-color: #E8DFCA;
     width: 100%;
     padding: 2vw;
@@ -8,9 +7,26 @@
     row-gap: 1vw;
 }
 
-.goal-card {
-    border: 1px solid;
+.goal-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vh;
+}
 
+.goal-card {
+    padding: 1vw;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid;
+    width: 28%;
+    height: 10vh;
+    box-shadow: 2px 2px 8px 0 gray;
+}
+
+.goal-card a {
+    text-decoration: none;
+    color: black;
 }
 
 .form-popup {
@@ -47,6 +63,10 @@
     padding: 1vh;
 }
 
+.delete-btn {
+    color: black;
+}
+
 #form-btn {
     background-color: rgb(84, 134, 99);
     color: white;
@@ -54,5 +74,10 @@
     margin: 4vh 0 0 0;
     height: 5vh;
     width: 8vw;
+}
+
+#new-btn {
+    height: 5vh;
+    width: 10vw;
 }
 

@@ -1,5 +1,6 @@
 .navigation {
     margin: 0 3vw 0 0;
+    height: fit-content;
     width: 10vw;
     background-color: #E8DFCA;
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
