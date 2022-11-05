@@ -1,9 +1,7 @@
 import "./Goals.css";
 import {
-  createGoal,
   getGoals,
-  deleteGoal,
-  editGoal,
+  deleteGoal
 } from "../../services/goals-api";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
@@ -43,16 +41,22 @@ const Goals = () => {
       <Header title={"Goals"} />
 
       <div className="main-content">
+      
         <Navbar />
 
         <div className="active-goals">
+          <div className="top left-corner"></div>
+          <div className="top right-corner"></div>
+          <div className="bottom right-corner"></div>
+          <div className="bottom left-corner"></div>
+
           <button id="new-btn" onClick={() => setFormPopup(true)}>Create New Goal</button>
 
           <div className="goal-list">
             {goals &&
               goals.map((g, i) => {
                 return (
-                  <div key={i}>
+                  <div className="goal-card" key={i}>
                     <a href={`/goals/${g._id}`}><p>{g.goal}</p></a>
                     <form onSubmit={(evt) => remove(evt, g._id)}>
                       <button type="submit">X</button>

@@ -3,14 +3,13 @@ import { editGoal, getGoal, createGoal } from "../../services/goals-api"
 import DatePicker from 'react-datepicker'
 
 const GoalForm = ({ setTrigger, data }) => {
-    const [goalData, setGoalData] = useState(data)
 
-    const [goal, setGoal] = useState(data.goal || '')
-    const [measurability, setMeasurability] = useState(data.measurability || '')
-    const [difficulty, setDifficulty] = useState(data.difficulty || 0)
-    const [category, setCategory] = useState(data.category || '') 
+    const [goal, setGoal] = useState('')
+    const [measurability, setMeasurability] = useState('')
+    const [difficulty, setDifficulty] = useState(0)
+    const [category, setCategory] = useState('') 
     const [targetDate, setTargetDate] = useState(new Date())
-    const [reason, setReason] = useState(data.reason || '')
+    const [reason, setReason] = useState('')
 
     const create = async (evt) => {
         const newGoal = {
@@ -46,6 +45,16 @@ const GoalForm = ({ setTrigger, data }) => {
             console.log(err)
         }
     }
+
+    useEffect(() => {
+        if (data) {
+            setGoal(data.goal)
+            setMeasurability(data.measurability)
+            setDifficulty(data.difficulty)
+            setCategory(data.category)
+            setReason(data.reason)
+        }
+    }, [])
 
     return (
         <div className="goal-form">

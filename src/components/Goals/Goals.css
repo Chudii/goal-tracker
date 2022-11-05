@@ -1,7 +1,16 @@
 .active-goals {
-    background-color: rgb(121, 161, 133);
+    position: relative;
+    background-color: #E8DFCA;
     width: 100%;
-    color: white;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1vw;
+}
+
+.goal-card {
+    border: 1px solid;
+
 }
 
 .form-popup {
@@ -46,3 +55,4 @@
     height: 5vh;
     width: 8vw;
 }
+
