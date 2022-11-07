@@ -1,10 +1,10 @@
 .navigation {
-    margin: 0 3vw 0 0;
     height: fit-content;
+    margin: 0 1vw 0 0;
     width: 10vw;
     background-color: #E8DFCA;
     border-radius: 0% 0% 0% 0% / 0% 0% 0% 0%;
-    box-shadow: 20px 20px rgba(236, 203, 132, 0.15);
+    box-shadow: 1vw 1vw rgba(236, 203, 132, 0.15);
     position: relative;
 }
 
@@ -40,11 +40,12 @@ nav {
     flex-direction: column;
     padding: 20vh 3vw 20vh 2vw;
     row-gap: 3vh;
+    justify-content: flex-start;
     text-align: left;
 }
 
 .navigation a {
-    width: 5vw;
+    width: 100%;
     display: flex;
     justify-self: left;
     color: black;

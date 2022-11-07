@@ -3,7 +3,9 @@ body {
 }
 
 .main-content {
-    margin: 1vw;
+    display: flex;
+    margin: 2vw 2vw 2vw 2vw;
+    justify-content: space-between;
 }
 
 .dash {

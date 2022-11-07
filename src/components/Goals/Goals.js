@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import NewGoal from "../NewGoal/NewGoal";
+import Analytics from "./Analytics/Analytics";
 import "react-datepicker/dist/react-datepicker.css";
 
 /*
@@ -65,6 +66,8 @@ const Goals = () => {
           
           <NewGoal trigger={formPopup} setTrigger={setFormPopup} />
         </div>
+
+        <Analytics />
       </div>
     </div>
   );

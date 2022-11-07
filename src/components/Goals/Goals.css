@@ -1,25 +1,50 @@
 .active-goals {
+    height: 69.75vh;
     background-color: #E8DFCA;
-    width: 100%;
+    width: 58vw;
     padding: 2vw;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
-    row-gap: 1vw;
 }
 
 .goal-list {
+    margin: 0 0 0 0;
+    height: 54vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     row-gap: 1vh;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+.goal-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.goal-list::-webkit-scrollbar {
+    margin: 0 1vw 0 0;
+    width: 10px;
+	background-color: #F5F5F5;
+}
+
+.goal-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #bba37f;
 }
 
 .goal-card {
+    align-items: center;
     padding: 1vw;
     background-color: white;
     display: flex;
     justify-content: space-between;
     border: 1px solid;
-    width: 28%;
+    width: 48%;
     height: 10vh;
     box-shadow: 2px 2px 8px 0 gray;
 }
