@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import NewGoal from "../NewGoal/NewGoal";
+import NewTask from "../Task/NewTask/NewTask";
 import Analytics from "./Analytics/Analytics";
 import Footer from "../Footer/Footer";
 
@@ -23,7 +24,8 @@ import Footer from "../Footer/Footer";
 
 const Goals = () => {
   const [goals, setGoals] = useState([]);
-  const [formPopup, setFormPopup] = useState(false)
+  const [goalPopup, setGoalPopup] = useState(false)
+  const [taskPopup, setTaskPopup] = useState(false)
   const [data, setData] = useState({})
 
   const remove = async (evt, id) => {
@@ -59,11 +61,14 @@ const Goals = () => {
           <div className="buttons">
             <button 
               id="new-btn" 
-              onClick={() => setFormPopup(true)}
+              onClick={() => setGoalPopup(true)}
             >
               Create New Goal
             </button>
-            <button>
+            <button
+              className="new-btn"
+              onClick={() => setTaskPopup(true)}
+            >
               Add New Task
             </button>
           </div>
@@ -92,7 +97,8 @@ const Goals = () => {
       </div>
 
       <Footer />
-      <NewGoal trigger={formPopup} setTrigger={setFormPopup} />
+      <NewGoal trigger={goalPopup} setTrigger={setGoalPopup} />
+      <NewTask trigger={taskPopup} setTrigger={setTaskPopup} />
     </div>
   );
 };
