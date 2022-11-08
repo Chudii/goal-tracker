@@ -1,14 +1,15 @@
 import "./Goals.css";
 import {
+  getGoal,
   getGoals,
-  deleteGoal
+  deleteGoal,
 } from "../../services/goals-api";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import NewGoal from "../NewGoal/NewGoal";
 import Analytics from "./Analytics/Analytics";
-import "react-datepicker/dist/react-datepicker.css";
+import Footer from "../Footer/Footer";
 
 /*
  * SMART Process
@@ -23,6 +24,7 @@ import "react-datepicker/dist/react-datepicker.css";
 const Goals = () => {
   const [goals, setGoals] = useState([]);
   const [formPopup, setFormPopup] = useState(false)
+  const [data, setData] = useState({})
 
   const remove = async (evt, id) => {
     try {
@@ -37,6 +39,11 @@ const Goals = () => {
         .then((res) => setGoals(res.data));
   }, []);
 
+  const handleAnayltics = async (id) => {
+    getGoal(id)
+      .then(res => setData(res.data))
+  }
+
   return (
     <div className="goals">
       <Header title={"Goals"} />
@@ -46,15 +53,21 @@ const Goals = () => {
         <Navbar />
 
         <div className="active-goals">
-
+          <div className="board-title">
+            <p>ACTIVE GOALS</p>
+          </div>
           <button id="new-btn" onClick={() => setFormPopup(true)}>Create New Goal</button>
 
           <div className="goal-list">
             {goals &&
               goals.map((g, i) => {
                 return (
-                  <div className="goal-card" key={i}>
-                    <a href={`/goals/${g._id}`}><p>{g.goal}</p></a>
+                  <div 
+                    className="goal-card" 
+                    key={i}
+                    onClick={() => handleAnayltics(g._id)}
+                  >
+                    <a><p>{g.goal}</p></a>
                     <form onSubmit={(evt) => remove(evt, g._id)}>
                       <button className='delete-btn' type="submit">X</button>
                     </form>
@@ -67,8 +80,10 @@ const Goals = () => {
           <NewGoal trigger={formPopup} setTrigger={setFormPopup} />
         </div>
 
-        <Analytics />
+        <Analytics data={data}/>
       </div>
+
+      <Footer />
     </div>
   );
 };

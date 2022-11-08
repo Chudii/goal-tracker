@@ -1,9 +1,9 @@
 import './Analytics.css'
 
-const Analytics = () => {
+const Analytics = ({ data }) => {
     return (
         <div className="analytics">
-            <p>This is where the analytics go.</p>
+            <p>{data.goal}</p>
         </div>
     )
 }

@@ -1,0 +1,14 @@
+.footer {
+    height: 20vh;
+    background-color:#bba37f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 60%;
+}
