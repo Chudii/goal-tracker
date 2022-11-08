@@ -1,5 +1,5 @@
 .footer {
-    height: 20vh;
+    height: 25vh;
     background-color:#bba37f;
     display: flex;
     justify-content: center;
@@ -9,6 +9,22 @@
 .mid-footer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 60%;
+}
+
+.menu div {
+    margin: 2vw 0 0 0;
+    line-height: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu a {
+    text-decoration: none;
+    color: black;
+}
+
+section {
+    height: fit-content;
 }

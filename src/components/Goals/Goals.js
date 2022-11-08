@@ -56,7 +56,18 @@ const Goals = () => {
           <div className="board-title">
             <p>ACTIVE GOALS</p>
           </div>
-          <button id="new-btn" onClick={() => setFormPopup(true)}>Create New Goal</button>
+          <div className="buttons">
+            <button 
+              id="new-btn" 
+              onClick={() => setFormPopup(true)}
+            >
+              Create New Goal
+            </button>
+            <button>
+              Add New Task
+            </button>
+          </div>
+          
 
           <div className="goal-list">
             {goals &&
@@ -75,15 +86,13 @@ const Goals = () => {
                 );
               })}
           </div>
-
-          
-          <NewGoal trigger={formPopup} setTrigger={setFormPopup} />
         </div>
 
         <Analytics data={data}/>
       </div>
 
       <Footer />
+      <NewGoal trigger={formPopup} setTrigger={setFormPopup} />
     </div>
   );
 };

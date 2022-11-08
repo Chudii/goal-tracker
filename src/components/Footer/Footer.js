@@ -8,12 +8,17 @@ const Footer = () => {
                     <div className='box'>
                         <p>DO<strike>UBT</strike>.</p>
                     </div>
+                    <p>Made with 🤍 by CodeNameChu</p>
                 </section>
                 <section className="menu">
                     <div>
+                        <a href={'/'}>Home</a>
                         <a>How it Works</a>
                         <a>Contact Us</a>
                     </div>
+                </section>
+                <section>
+
                 </section>
             </div>
         </div>

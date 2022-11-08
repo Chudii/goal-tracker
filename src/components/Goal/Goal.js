@@ -27,7 +27,7 @@ const Goal = () => {
     return (
         <div>
             <h1>Show Page for Specific Goals</h1>
-            <h3>Goal:</h3>
+            <h3>Goal: {data.goal}</h3>
             <EditGoal data={data} trigger={formPopup} setTrigger={setFormPopup} />
             <button type="button" onClick={(evt) => setFormPopup(true)}>EDIT</button>
             <button onClick={remove}>Delete</button>
