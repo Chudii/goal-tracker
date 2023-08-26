@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import Navbar from "../Navbar/Navbar";
 import NewGoal from "../NewGoal/NewGoal";
-import NewTask from "../Task/NewTask/NewTask";
 import Category from "./Category/Category";
 import Analytics from "./Analytics/Analytics";
 import Footer from "../Footer/Footer";
@@ -30,6 +29,7 @@ const Goals = () => {
   const [data, setData] = useState({})
 
   const remove = async (evt, id) => {
+    evt.preventDefault()
     try {
       await deleteGoal(id);
     } catch (err) {
@@ -40,7 +40,7 @@ const Goals = () => {
   useEffect(() => {
     getGoals()
         .then((res) => setGoals(res.data));
-  }, []);
+  }, [goals]);
 
   const handleAnayltics = async (id) => {
     getGoal(id)
@@ -65,12 +65,6 @@ const Goals = () => {
               onClick={() => setGoalPopup(true)}
             >
               Create New Goal
-            </button>
-            <button
-              className="new-btn"
-              onClick={() => setTaskPopup(true)}
-            >
-              Add New Task
             </button>
           </div>
           
@@ -100,7 +94,6 @@ const Goals = () => {
 
       <Footer />
       <NewGoal trigger={goalPopup} setTrigger={setGoalPopup} />
-      <NewTask trigger={taskPopup} setTrigger={setTaskPopup} />
     </div>
   );
 };
