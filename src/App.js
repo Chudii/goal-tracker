@@ -4,6 +4,7 @@ import Home from './pages/Home/Home'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Goals from './components/Goals/Goals'
 import Goal from './components/Goal/Goal'
+import Create from './pages/Create/Create';
 
 const App = () => {
   return (
@@ -11,6 +12,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/create' element={<Create />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/goals' element={<Goals />} />
           <Route path='/goals/:id' element={<Goal />} />

@@ -24,7 +24,6 @@ const GoalForm = ({ setTrigger, data }) => {
 
         try {
             await createGoal(newGoal)
-            setTrigger(false)
         } catch (err) {
             console.log(err)
         }

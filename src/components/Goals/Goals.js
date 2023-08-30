@@ -5,11 +5,12 @@ import {
   deleteGoal,
 } from "../../services/goals-api";
 import { useState, useEffect } from "react";
-import Header from "../../layouts/Header/Header";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../../layouts/Navbar/Navbar";
-import NewGoal from "../NewGoal/NewGoal";
 import Category from "./Category/Category";
 import Footer from "../../layouts/Footer/Footer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 /*
  * SMART Process
@@ -22,9 +23,8 @@ import Footer from "../../layouts/Footer/Footer";
  */
 
 const Goals = () => {
+  const nav = useNavigate()
   const [goals, setGoals] = useState([]);
-  const [goalPopup, setGoalPopup] = useState(false)
-  const [taskPopup, setTaskPopup] = useState(false)
   const [data, setData] = useState({})
 
   const remove = async (id) => {
@@ -47,24 +47,20 @@ const Goals = () => {
 
   return (
     <div className="goals">
-      <Header title={"Goals"} />
-
+      <Navbar />
       <div className="main-content">
-      
-        <Navbar />
+        <div className="buttons">
+          <button 
+            id="new-btn" 
+            onClick={() => nav('/create')}
+          >
+            <FontAwesomeIcon icon={faPlus} className="plus-icon"/>
+            Create Goal
+          </button>
+        </div>
 
         <div className="active-goals">
-          <div className="board-title">
-            <p>ACTIVE GOALS</p>
-          </div>
-          <div className="buttons">
-            <button 
-              id="new-btn" 
-              onClick={() => setGoalPopup(true)}
-            >
-              Create New Goal
-            </button>
-          </div>
+          
           
 
           <div className="goal-list">
@@ -94,7 +90,6 @@ const Goals = () => {
       </div>
 
       <Footer />
-      <NewGoal trigger={goalPopup} setTrigger={setGoalPopup} />
     </div>
   );
 };

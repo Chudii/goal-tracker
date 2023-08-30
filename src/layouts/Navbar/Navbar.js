@@ -12,7 +12,7 @@ const Navbar = () => {
                 </label>
                 <label className='logo'>HiEffort</label>
                 <ul>
-                   <li><a href='/dashboard'>Home</a></li>
+                   <li><a href='/dashboard' className='active'>Home</a></li>
                    <li><a>Profile</a></li>
                    <li><a href='/goals'>Goals</a></li>
                    <li><a>About</a></li>
