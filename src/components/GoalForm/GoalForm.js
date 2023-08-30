@@ -2,9 +2,10 @@ import { useEffect, useState } from "react"
 import { editGoal, getGoal, createGoal } from "../../services/goals-api"
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import { useNavigate } from "react-router-dom"
 
 const GoalForm = ({ setTrigger, data }) => {
-
+    const nav = useNavigate()
     const [goal, setGoal] = useState('')
     const [measurability, setMeasurability] = useState('')
     const [difficulty, setDifficulty] = useState(0)
@@ -44,6 +45,20 @@ const GoalForm = ({ setTrigger, data }) => {
         } catch (err) {
             console.log(err)
         }
+    }
+
+    const resetData = () => {
+        setGoal('')
+        setMeasurability('')
+        setDifficulty(0)
+        setCategory('')
+        setTargetDate(new Date())
+        setReason('')
+    }
+
+    const closeForm = () => {
+        resetData()
+        nav('/goals')
     }
 
     useEffect(() => {
@@ -130,7 +145,7 @@ const GoalForm = ({ setTrigger, data }) => {
                         <button id='form-btn' type='submit'>Add Goal</button>
                     </form>
 
-                    <button type='button' className="close-btn" onClick={() => setTrigger(false)}>Close</button>
+                    <button type='button' className="close-btn" onClick={() => closeForm()}>Close</button>
                 </div>
             </div>
         </div>

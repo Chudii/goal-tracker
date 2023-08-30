@@ -7,7 +7,7 @@ import {
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../layouts/Navbar/Navbar";
-import Category from "./Category/Category";
+import Category from "../../components/Category/Category";
 import Footer from "../../layouts/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
