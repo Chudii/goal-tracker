@@ -1,7 +1,3 @@
-.main-content {
-    
-}
-
 .active-goals {
     height: 69.75vh;
     width: 100%;
@@ -88,40 +84,6 @@
     color: black;
 }
 
-.form-popup {
-    line-height: 2;
-}
-
-.form-popup p {
-    font-size: 1.8rem;
-}
-
-.form-popup form {
-    width: 35vw;
-    display: flex;
-    flex-direction: column;
-    padding: 5vh;
-}
-
-.form-popup label {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2vh;
-    font-size: 1.2rem;
-}
-
-.form-popup input {
-    background-color: rgb(233, 233, 233);
-    height: 3vh;
-    padding: 1vh;
-}
-
-.form-popup select {
-    background-color: rgb(233, 233, 233);
-    height: 5vh;
-    padding: 1vh;
-}
-
 .delete-btn {
     position: absolute;
     right: 1vw;
@@ -129,14 +91,8 @@
     color: black;
 }
 
-#form-btn {
-    background-color: #E8DFCA;
-    color: black;
-    align-self: center;
-    margin: 4vh 0 0 0;
-    height: 5vh;
-    width: 8vw;
-}
-
-
-
+@media (max-width: 858px) {
+    .main-content {
+        margin-top: 80px;
+    }
+} 
