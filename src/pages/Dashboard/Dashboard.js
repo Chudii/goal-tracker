@@ -4,11 +4,11 @@ import Navbar from '../../layouts/Navbar/Navbar'
 
 const Dashboard = () => {
     return (
-        <div>
-            <Header title={'Dashboard'}/>
+        <div className='dashboard'>
+            <Navbar />
 
             <div className='main-content'>
-                <Navbar />
+                
             </div>
             
         </div>

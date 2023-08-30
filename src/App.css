@@ -9,8 +9,3 @@
     list-style: none;
     text-decoration: none;
 }
-
-.App {
-    max-height: 100vh;
-    overflow-y: scroll;
-}
