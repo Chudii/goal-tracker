@@ -7,10 +7,10 @@ import {
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../../layouts/Navbar/Navbar";
-import Category from "../../components/Category/Category";
 import Footer from "../../layouts/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import Goal from "../../components/Goal/Goal";
 
 /*
  * SMART Process
@@ -27,23 +27,10 @@ const Goals = () => {
   const [goals, setGoals] = useState([]);
   const [data, setData] = useState({})
 
-  const remove = async (id) => {
-    try {
-      await deleteGoal(id);
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
   useEffect(() => {
     getGoals()
         .then((res) => setGoals(res.data));
   }, [goals]);
-
-  const handleAnayltics = async (id) => {
-    getGoal(id)
-      .then(res => setData(res.data))
-  }
 
   return (
     <div className="goals">
@@ -67,21 +54,13 @@ const Goals = () => {
             {goals &&
               goals.map((g, i) => {
                 return (
-                  <div 
-                    className="goal-card" 
+                  <Goal 
                     key={i}
-                    onClick={() => handleAnayltics(g._id)}
-                  >
-                    <a><p>{g.goal}</p></a>
-                    <Category type={g.category} />
-                    <button 
-                      className='delete-btn' 
-                      type="submit"
-                      onClick={() => remove(g._id)}
-                    >
-                    X
-                    </button>
-                  </div>
+                    id={g._id}
+                    goal={g.goal}
+                    date={g.targetDate}
+                    category={g.category}
+                  />
                 );
               })}
           </div>

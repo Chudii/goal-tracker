@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import './Category.css'
 
 const colorMatchup = {
     'lifestyle': '#85C7F2',
@@ -21,7 +22,6 @@ const Block = styled.div(props => ({
 const Category = ({ type }) => {
     return (
         <div className="category">
-
             <Block color={type}>
                 {type}
             </Block>
