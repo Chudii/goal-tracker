@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { editGoal, getGoal, createGoal } from "../../services/goals-api"
 import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 const GoalForm = ({ setTrigger, data }) => {
 

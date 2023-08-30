@@ -17,9 +17,6 @@ const Block = styled.div(props => ({
     backgroundColor: colorMatchup[props.color]
 }))
 
-// const categoryStyle = {
-//     backgroundColor: colorMatchup[type],
-// }
 
 const Category = ({ type }) => {
     return (

@@ -5,12 +5,11 @@ import {
   deleteGoal,
 } from "../../services/goals-api";
 import { useState, useEffect } from "react";
-import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
+import Header from "../../layouts/Header/Header";
+import Navbar from "../../layouts/Navbar/Navbar";
 import NewGoal from "../NewGoal/NewGoal";
 import Category from "./Category/Category";
-import Analytics from "./Analytics/Analytics";
-import Footer from "../Footer/Footer";
+import Footer from "../../layouts/Footer/Footer";
 
 /*
  * SMART Process
@@ -28,8 +27,7 @@ const Goals = () => {
   const [taskPopup, setTaskPopup] = useState(false)
   const [data, setData] = useState({})
 
-  const remove = async (evt, id) => {
-    evt.preventDefault()
+  const remove = async (id) => {
     try {
       await deleteGoal(id);
     } catch (err) {
@@ -80,16 +78,19 @@ const Goals = () => {
                   >
                     <a><p>{g.goal}</p></a>
                     <Category type={g.category} />
-                    <form onSubmit={(evt) => remove(evt, g._id)}>
-                      <button className='delete-btn' type="submit">X</button>
-                    </form>
+                    <button 
+                      className='delete-btn' 
+                      type="submit"
+                      onClick={() => remove(g._id)}
+                    >
+                    X
+                    </button>
                   </div>
                 );
               })}
           </div>
         </div>
 
-        <Analytics data={data}/>
       </div>
 
       <Footer />

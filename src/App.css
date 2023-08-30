@@ -6,26 +6,11 @@
     padding: 0;
     border: 0;
     font-family: 'Sanchez';
+    list-style: none;
+    text-decoration: none;
 }
 
 .App {
     max-height: 100vh;
     overflow-y: scroll;
-}
-
-.App::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: #F5F5F5;
-}
-
-.App::-webkit-scrollbar {
-    border-radius: 10px;
-    width: 15px;
-	background-color: #F5F5F5;
-}
-
-.App::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-	box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #bba37f;
 }

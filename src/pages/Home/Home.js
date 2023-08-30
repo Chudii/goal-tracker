@@ -1,13 +1,10 @@
 import './Home.css'
-import Calendar from '../../components/Calendar/Calendar'
-import Header from '../../components/Header/Header'
+import Header from '../../layouts/Header/Header'
 
 const Home = () => {
     return (
         <div className='home'>
             <Header title={'Goal Tracker'} />
-
-            <Calendar />
 
             <div className='info'>
                 <p>
