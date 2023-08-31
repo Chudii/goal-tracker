@@ -5,9 +5,9 @@ const colorMatchup = {
     'lifestyle': '#624F82',
     'work': '#464D77',
     'fitness': '#FFAD69',
-    'hobby': '#EFD780',
+    'hobby': '#FFC436',
     'finances': '#9CD08F',
-    'project': '#5C6672',
+    'project': '#F55050',
 }
 
 const Block = styled.div(props => ({

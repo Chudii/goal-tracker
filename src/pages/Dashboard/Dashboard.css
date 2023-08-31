@@ -1,0 +1,12 @@
+.goal-count {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    row-gap: 10px;
+}
+
+div.count {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+}

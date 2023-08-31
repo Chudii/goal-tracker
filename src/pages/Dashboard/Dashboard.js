@@ -54,9 +54,35 @@ const Dashboard = () => {
         <div className='dashboard'>
             <Navbar />
             <div className='main-content'>
-                <div className='goal-categories'>
-                    <p>{categoryCnt.lifestyle} <Category type='fitness' className='home-cat'/> Goal</p>
-                    <p>{categoryCnt.work}</p>
+                <div className='goal-count'>
+                    <div className='lifestyle count'>
+                        <p>{categoryCnt.lifestyle}</p>
+                        <Category type='lifestyle' /> 
+                    </div>
+                    <div className='work count'>
+                        <p>{categoryCnt.work}</p>
+                        <Category type='work' />
+                    </div>
+                    <div className='finances count'>
+                        <p>{categoryCnt.finances}</p>
+                        <Category type='finances' /> 
+                    </div>
+                    <div className='hobby count'>
+                        <p>{categoryCnt.hobby}</p>
+                        <Category type='hobby' /> 
+                    </div>
+                    <div className='fitness count'>
+                        <p>{categoryCnt.fitness}</p>
+                        <Category type='fitness' /> 
+                    </div>
+                    <div className='project count'>
+                        <p>{categoryCnt.project}</p>
+                        <Category type='project' /> 
+                    </div>
+                </div>
+                <div className='goal-info'>
+                    <h1>{goals.length}</h1>
+                    <p>ACTIVE GOALS</p>
                 </div>
             </div>
             
