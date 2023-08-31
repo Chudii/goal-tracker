@@ -11,5 +11,6 @@
 }
 
 .main-content {
-    height: 100vh;
+    height: fit-content;
+    overflow-y: scroll;
 }

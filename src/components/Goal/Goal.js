@@ -20,9 +20,12 @@ const Goal = ({ id, goal, difficulty, date, category }) => {
     }
 
     const populateDiff = (difficulty) => {
-        return [...Array(difficulty)].map(i => {
+        return [...Array(difficulty)].map((e, i) => {
             return (
-                <FontAwesomeIcon icon={faMountain}/>
+                <FontAwesomeIcon 
+                    key={i}
+                    icon={faMountain}
+                />
             )
         })
     }

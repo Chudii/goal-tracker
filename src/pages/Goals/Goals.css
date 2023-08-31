@@ -1,5 +1,5 @@
 .active-goals {
-    height: 69.75vh;
+    height: 100%;
     width: 100%;
     padding: 2vw;
     display: flex;
@@ -53,7 +53,7 @@
 }
 
 @media (max-width: 858px) {
-    .main-content {
+    .active-goals {
         margin-top: 80px;
     }
 
