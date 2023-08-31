@@ -2,6 +2,7 @@ import './Home.css'
 import Header from '../../layouts/Header/Header'
 
 const Home = () => {
+    
     return (
         <div className='home'>
             <Header title={'Goal Tracker'} />

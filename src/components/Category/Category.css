@@ -1,4 +1,3 @@
 .category {
-    position: absolute;
-    bottom: 10px;
+    width: fit-content;
 }

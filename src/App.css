@@ -11,6 +11,7 @@
 }
 
 .main-content {
+    margin-top: 80px;
     height: fit-content;
     overflow-y: scroll;
 }

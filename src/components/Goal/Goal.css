@@ -10,7 +10,6 @@
     border-radius: 5px;
     margin: 0 10px 10px 0;
     width: 100%;
-    height: 120px;
     z-index: 0;
 }
 
@@ -26,6 +25,7 @@
 .difficulty {
     font-size: 0.9rem;
     color: rgb(102, 90, 175);
+    margin-bottom: 5px;
 }
 
 .difficulty > * {
