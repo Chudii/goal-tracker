@@ -10,19 +10,20 @@
 
 .buttons {
     position: sticky;
+    column-gap: 10px;
     top: 0;
     height: 70px;
     width: 100%;
     background: rgb(241, 241, 241);
     display: flex;
     align-items: center;
+    padding: 0 10px;
 }
 
 .buttons > button {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;
     font-size: 1rem;
     height: 50px;
     width: 150px;
@@ -30,7 +31,7 @@
     border: 2px solid;
 }
 
-.plus-icon {
+.icon {
     margin-right: 5px;
 }
 
@@ -38,6 +39,12 @@
     color: white;
     background: #6DA9E4;
     border-color: #a3cef8;
+}
+
+#completed-goals {
+    color: white;
+    background: #21825C;
+    border-color: #34aa7b;
 }
 
 .goal-list {

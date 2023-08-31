@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import './Category.css'
 
 const colorMatchup = {
-    'lifestyle': '#85C7F2',
+    'lifestyle': '#624F82',
     'work': '#464D77',
     'fitness': '#FFAD69',
     'hobby': '#EFD780',

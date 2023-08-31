@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import Navbar from "../../layouts/Navbar/Navbar";
 import Footer from "../../layouts/Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faScroll } from "@fortawesome/free-solid-svg-icons";
 import Goal from "../../components/Goal/Goal";
 
 /*
@@ -41,15 +41,25 @@ const Goals = () => {
             id="new-btn" 
             onClick={() => nav('/create')}
           >
-            <FontAwesomeIcon icon={faPlus} className="plus-icon"/>
+            <FontAwesomeIcon 
+              icon={faPlus}
+              className="icon"
+            />
             Create Goal
+          </button>
+
+          <button
+            id="completed-goals"
+          >
+            <FontAwesomeIcon 
+              icon={faScroll}
+              className="icon"  
+            />
+            Completed
           </button>
         </div>
 
         <div className="active-goals">
-          
-          
-
           <div className="goal-list">
             {goals &&
               goals.map((g, i) => {
@@ -58,6 +68,7 @@ const Goals = () => {
                     key={i}
                     id={g._id}
                     goal={g.goal}
+                    difficulty={g.difficulty}
                     date={g.targetDate}
                     category={g.category}
                   />

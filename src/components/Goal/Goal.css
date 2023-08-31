@@ -10,7 +10,7 @@
     border-radius: 5px;
     margin: 0 10px 10px 0;
     width: 100%;
-    height: 110px;
+    height: 120px;
     z-index: 0;
 }
 
@@ -21,6 +21,15 @@
 .goal-date {
     font-size: 0.9rem;
     color: rgb(168, 168, 168);
+}
+
+.difficulty {
+    font-size: 0.9rem;
+    color: rgb(102, 90, 175);
+}
+
+.difficulty > * {
+    margin: 0 2px;
 }
 
 .delete-btn {

@@ -15,6 +15,7 @@ const GoalForm = ({ data }) => {
     const [reason, setReason] = useState('')
 
     const create = async (evt) => {
+        evt.preventDefault()
         const newGoal = {
             goal: goal,
             measurability: measurability,
@@ -26,6 +27,7 @@ const GoalForm = ({ data }) => {
 
         try {
             await createGoal(newGoal)
+            nav('/goals')
         } catch (err) {
             console.log(err)
         }

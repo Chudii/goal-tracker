@@ -5,9 +5,9 @@ import { useState, useEffect } from 'react'
 import { getGoal, deleteGoal } from '../../services/goals-api'
 import Category from "../Category/Category";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
+import { faCircleXmark, faMountain } from "@fortawesome/free-solid-svg-icons";
 
-const Goal = ({ id, goal, date, category }) => {
+const Goal = ({ id, goal, difficulty, date, category }) => {
     const nav = useNavigate()
     const [data, setData] = useState({})
 
@@ -17,6 +17,14 @@ const Goal = ({ id, goal, date, category }) => {
         } catch (err) {
           console.log(err);
         }
+    }
+
+    const populateDiff = (difficulty) => {
+        return [...Array(difficulty)].map(i => {
+            return (
+                <FontAwesomeIcon icon={faMountain}/>
+            )
+        })
     }
 
     return (
@@ -29,6 +37,9 @@ const Goal = ({ id, goal, date, category }) => {
                 {new Date(date).getDate()}/
                 {new Date(date).getFullYear()} 
             </p>
+            <div className='difficulty'>
+                Difficulty: {populateDiff(difficulty)}
+            </div>
             <Category type={category} />
             <FontAwesomeIcon 
                 icon={faCircleXmark}

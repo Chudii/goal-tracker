@@ -9,3 +9,7 @@
     list-style: none;
     text-decoration: none;
 }
+
+.main-content {
+    height: 100vh;
+}
