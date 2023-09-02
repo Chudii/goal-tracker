@@ -1,8 +1,28 @@
+.top-dash {
+    display: flex;
+}
+
 .goal-count {
     display: flex;
     flex-direction: column;
     margin: 10px 20px;
     row-gap: 10px;
+    width: 100px;
+}
+
+.goal-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 130px;
+    margin: 10px 20px;
+}
+
+.goal-info p {
+    margin: 20px 0 0 0;
+    font-size: 0.8rem;
+    color: gray;
 }
 
 div.count {
@@ -10,3 +30,4 @@ div.count {
     justify-content: space-between;
     width: 100px;
 }
+
