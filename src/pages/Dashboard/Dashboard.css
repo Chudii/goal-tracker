@@ -1,13 +1,15 @@
 .top-dash {
     display: flex;
+    background-color: rgb(230, 230, 230);
+    justify-content: space-evenly;
+    padding: 20px 10px;
 }
 
 .goal-count {
     display: flex;
     flex-direction: column;
-    margin: 10px 20px;
+    padding: 20px;
     row-gap: 10px;
-    width: 100px;
 }
 
 .goal-info {
@@ -15,14 +17,21 @@
     flex-direction: column;
     text-align: center;
     justify-content: center;
-    width: 130px;
-    margin: 10px 20px;
+    width: 142px;
+    padding: 20px;
 }
 
 .goal-info p {
     margin: 20px 0 0 0;
     font-size: 0.8rem;
     color: gray;
+}
+
+.goal-count, .goal-info {
+    border: 1px solid rgb(211, 211, 211);
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    border-radius: 5px;
+    background-color: white;
 }
 
 div.count {
