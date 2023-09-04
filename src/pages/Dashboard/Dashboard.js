@@ -94,7 +94,9 @@ const Dashboard = () => {
                         <p>ACTIVE GOALS</p>
                     </div>
                 </div>
-                
+                <div className='bottom-dash'>
+                    
+                </div>
             </div>
             
         </div>
