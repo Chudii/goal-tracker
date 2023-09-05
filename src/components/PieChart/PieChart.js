@@ -9,7 +9,7 @@ const PieChart = ({ fitCount = 0, lifeCount = 0, workCount = 0, hobCount = 0, fi
         labels: [],
         datasets: [
             {
-                label: '# of Goals',
+                label: " Total Goals",
                 data: [fitCount, lifeCount, workCount, hobCount, finCount, projCount],
                 backgroundColor: [
                     '#FFAD69',

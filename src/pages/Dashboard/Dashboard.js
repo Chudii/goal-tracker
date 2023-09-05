@@ -84,6 +84,19 @@ const Dashboard = () => {
                             <Category type='project' /> 
                         </div>
                     </div>
+                    <div className='goal-chart'>
+                        <PieChart
+                            fitCount={categoryCnt.fitness}
+                            lifeCount={categoryCnt.lifestyle}
+                            workCount={categoryCnt.work}
+                            hobCount={categoryCnt.hobby}
+                            finCount={categoryCnt.finances}
+                            projCount={categoryCnt.project}
+                        />
+                        <p>GOAL SPREAD</p>
+                    </div>
+                </div>
+                <div className='bottom-dash'>
                     <div className='goal-info'>
                         <CircularProgressbar
                             value={0}
@@ -94,16 +107,7 @@ const Dashboard = () => {
                         />
                         <p>ACTIVE GOALS</p>
                     </div>
-                </div>
-                <div className='bottom-dash'>
-                    <PieChart
-                        fitCount={categoryCnt.fitness}
-                        lifeCount={categoryCnt.lifestyle}
-                        workCount={categoryCnt.work}
-                        hobCount={categoryCnt.hobby}
-                        finCount={categoryCnt.finances}
-                        projCount={categoryCnt.project}
-                    />
+                    
                 </div>
             </div>
             
