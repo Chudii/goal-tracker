@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { getGoals } from '../../services/goals-api';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import Category from '../../components/Category/Category';
+import PieChart from '../../components/PieChart/PieChart';
 import Navbar from '../../layouts/Navbar/Navbar'
 
 const Dashboard = () => {
@@ -95,7 +96,14 @@ const Dashboard = () => {
                     </div>
                 </div>
                 <div className='bottom-dash'>
-                    
+                    <PieChart
+                        fitCount={categoryCnt.fitness}
+                        lifeCount={categoryCnt.lifestyle}
+                        workCount={categoryCnt.work}
+                        hobCount={categoryCnt.hobby}
+                        finCount={categoryCnt.finances}
+                        projCount={categoryCnt.project}
+                    />
                 </div>
             </div>
             
