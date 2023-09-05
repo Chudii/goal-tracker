@@ -96,7 +96,7 @@ const Dashboard = () => {
                         <p>GOAL SPREAD</p>
                     </div>
                 </div>
-                <div className='bottom-dash'>
+                <div className='mid-dash'>
                     <div className='goal-info'>
                         <CircularProgressbar
                             value={0}
@@ -107,7 +107,18 @@ const Dashboard = () => {
                         />
                         <p>ACTIVE GOALS</p>
                     </div>
-                    
+                    <div className='goal-completed'>
+                        <CircularProgressbar
+                            value={65}
+                            text={`10/65`}
+                            styles={buildStyles({
+                                textColor: 'black',
+                                // pathColor: '#38E54D'
+                                pathColor: '#614BC3'
+                            })}
+                        />
+                        <p>TOTAL COMPLETED</p>
+                    </div>
                 </div>
             </div>
             
