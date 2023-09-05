@@ -1,6 +1,6 @@
 .dashboard .main-content {
     background-color: rgb(230, 230, 230);
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     row-gap: 10px;
@@ -59,10 +59,6 @@
     border: 1px solid white;
     color: white;
     font-size: 0.9rem;
-}
-
-.month-label p {
-    width: ;
 }
 
 div.count {
