@@ -120,6 +120,32 @@ const Dashboard = () => {
                         <p>TOTAL COMPLETED</p>
                     </div>
                 </div>
+                <div className='month-label'>
+                    <p>THIS MONTH</p>
+                </div>
+                <div className='bottom-dash'>
+                    <div className='month-info'>
+                        <CircularProgressbar
+                            value={0}
+                            text={`${goals.length}`}
+                            styles={buildStyles({
+                                textColor: 'black'
+                            })}
+                        />
+                        <p>{`${new Date().toLocaleString('default', { month: 'long' }).toUpperCase()} GOALS`}</p>
+                    </div>
+                    <div className='month-completed'>
+                        <CircularProgressbar
+                            value={65}
+                            text={`10/65`}
+                            styles={buildStyles({
+                                textColor: 'black',
+                                pathColor: '#38E54D'
+                            })}
+                        />
+                        <p>GOALS COMPLETED</p>
+                    </div>
+                </div>
             </div>
             
         </div>
